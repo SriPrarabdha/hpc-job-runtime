@@ -25,7 +25,7 @@ scancel 82
 
 - The server runs on the head node and:
 
-    1.accepts client requests,
+    1. accepts client requests,
     2. queues jobs using a thread-safe queue,
     3. dispatches jobs to an MPI program.
 
@@ -89,11 +89,10 @@ scancel 82
 
 1. src/server/server.c
 
-- Initializes shared memory and job queue
-- Starts two threads:
-
-    - User thread (receives jobs)
-    - MPI thread (dispatches jobs)
+    - Initializes shared memory and job queue
+    - Starts two threads:
+        - User thread (receives jobs)
+        - MPI thread (dispatches jobs)
 
 2. src/server/user_thread.c
 
