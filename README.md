@@ -66,23 +66,23 @@ scancel 82
                                                             |
                                                             | MPI (Slurm)
                                                             v
-                   +------------------------------------------------------------------+
-                   |                         MPI PROGRAM                              |
-                   |                  (Launched via Slurm / srun)                     |
-                   |                                                                  |
+                   +-------------------------------------------------------------------+
+                   |                         MPI PROGRAM                               |
+                   |                  (Launched via Slurm / srun)                      |
+                   |                                                                   |
                    |  Rank 0 (Leader)                                                  |
-                   |  ----------------                                                  |
+                   |  ----------------                                                 |
                    |  - Receives job from server                                       |
-                   |  - Broadcasts job                                                  |
+                   |  - Broadcasts job                                                 |
                    |  - Aggregates results                                             |
-                   |  - Sends result back                                               |
-                   |                                                                  |
+                   |  - Sends result back                                              |
+                   |                                                                   |
                    |  Ranks 1..N (Workers)                                             |
                    |  --------------------                                             |
                    |  - Receive job                                                    |
                    |  - Run compute kernel                                             |
                    |  - Send partial result                                            |
-                   +------------------------------------------------------------------+
+                   +-------------------------------------------------------------------+
 ```
 
 ## Important Components
