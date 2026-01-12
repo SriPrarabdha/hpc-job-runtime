@@ -4,18 +4,15 @@ project(hpc_demo C)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
-# ---- MPI ----
 find_package(MPI REQUIRED)
 
-# ---- Threads ----
 find_package(Threads REQUIRED)
 
-# ---- Include paths ----
 include_directories(
     ${PROJECT_SOURCE_DIR}/include
 )
 
-# ---- Server ----
+# Server
 add_executable(server
     src/server/server.c
     src/server/user_thread.c
@@ -31,7 +28,7 @@ target_link_libraries(server
     rt
 )
 
-# ---- MPI server ----
+# MPI server
 add_executable(mpi_server
     src/mpi/mpi_server.c
     src/compute/compute.c
@@ -39,9 +36,10 @@ add_executable(mpi_server
 
 target_link_libraries(mpi_server
     MPI::MPI_C
+    m
 )
 
-# ---- Client ----
+# client
 add_executable(client
     src/client/client.c
     src/server/socket_utils.c
