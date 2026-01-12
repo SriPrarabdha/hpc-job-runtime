@@ -89,13 +89,11 @@ scancel 82
 
 1. src/server/server.c
 
-Main orchestration logic.
-
 - Initializes shared memory and job queue
 - Starts two threads:
 
-    User thread (receives jobs)
-    MPI thread (dispatches jobs)
+    - User thread (receives jobs)
+    - MPI thread (dispatches jobs)
 
 2. src/server/user_thread.c
 
