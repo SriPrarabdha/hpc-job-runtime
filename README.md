@@ -16,8 +16,8 @@ squeue
 scancel 82
 
  -->
-
- A client submits a compute request, the server queues it using POSIX shared memory and pthreads, dispatches it to an MPI master–worker pool running under Slurm, aggregates the results, and returns them to the client.
+> [!IMPORTANT]
+> A client submits a compute request, the server queues it using POSIX shared memory and pthreads, dispatches it to an MPI master–worker pool running under Slurm, aggregates the results, and returns them to the client.
 
  ## High Level Flow
 
